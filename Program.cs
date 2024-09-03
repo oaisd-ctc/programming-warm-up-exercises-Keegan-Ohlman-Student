@@ -7,20 +7,20 @@ namespace NoviceChallenges
         static void Main(string[] args)
         {
             // Use the Main method to test your functions.
-            //Console.WriteLine(Add(5, 10));
-            // Console.WriteLine(IsEven(10));
-            // Console.WriteLine(MaxOfThree(1, 12, 5));
-            // Console.WriteLine(StringLength("Worlds"));
-            // Console.WriteLine(StartsHello("Hello World"));
-            // Console.WriteLine(ReverseString("Hello"));
-            // Console.WriteLine(Factorial(8));
-            // Console.WriteLine(Fibonacci(17));
-            // int[] test = {19, 5, 10, 35, 35};
-            // Console.WriteLine(LargestInArray(test));
-            // Console.WriteLine(IsPalindrome("Racecar"));
-            // Console.WriteLine(ArraySum(test));
-            // Console.WriteLine(CharCount("HelLoWorld", 'l'));
-            // Console.WriteLine(ConcatenateStrings("Hello", "World"));
+            Console.WriteLine(Add(5, 10));
+            Console.WriteLine(IsEven(10));
+            Console.WriteLine(MaxOfThree(1, 12, 5));
+            Console.WriteLine(StringLength("Worlds"));
+            Console.WriteLine(StartsHello("Hello World"));
+            Console.WriteLine(ReverseString("Hello"));
+            Console.WriteLine(Factorial(8));
+            Console.WriteLine(Fibonacci(17));
+            int[] test = {19, 5, 10, 35, 35};
+            Console.WriteLine(LargestInArray(test));
+            Console.WriteLine(IsPalindrome("Racecar"));
+            Console.WriteLine(ArraySum(test));
+            Console.WriteLine(CharCount("HelLoWorld", 'l'));
+            Console.WriteLine(ConcatenateStrings("Hello", "World"));
             Console.WriteLine(SwapEnds("Hello"));
         }
 
@@ -178,9 +178,11 @@ namespace NoviceChallenges
             if (s.Length <= 1) return s;
             char firstChar = s[0];
             char lastChar = s[s.Length - 1];
-            char temp = firstChar;
-            firstChar = lastChar;
-            lastChar = temp;
+            string temp1 = Char.ToString(lastChar);
+            string temp2 = Char.ToString(firstChar);
+            s = s.Remove(0, 1).Insert(0, temp1);
+            s = s.Remove(s.Length - 1, 1).Insert(s.Length - 1, temp2);
+            
             return s;
         }
     }
